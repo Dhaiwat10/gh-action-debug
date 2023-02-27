@@ -17,13 +17,15 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Download coverage report from Workflow A
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
+          workflow: workflow-a.yaml
           name: coverage-a
           path: coverage-a
       - name: Download coverage report from Workflow B
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
+          workflow: workflow-b.yaml
           name: coverage-b
           path: coverage-b
       - name: Combine coverage reports
