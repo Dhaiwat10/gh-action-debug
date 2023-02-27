@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
       - name: Run tests and generate coverage report
         run: npm run test:a
       - name: Upload coverage report to Github artifacts
