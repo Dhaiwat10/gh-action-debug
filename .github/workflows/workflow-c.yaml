@@ -33,5 +33,5 @@ jobs:
       - name: Upload coverage report to Github artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: coverage-merged.json
-          path: coverage-c
+          name: coverage-merged
+          path: coverage-merged.json
