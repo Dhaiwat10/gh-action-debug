@@ -19,17 +19,17 @@ jobs:
       - name: Download coverage report from Workflow A
         uses: actions/download-artifact@v2
         with:
-          name: coverage-a-${{ github.event.workflow_run.id }}
+          name: coverage-a
           path: coverage-a
       - name: Download coverage report from Workflow B
         uses: actions/download-artifact@v2
         with:
-          name: coverage-b-${{ github.event.workflow_run.id }}
+          name: coverage-b
           path: coverage-b
       - name: Combine coverage reports
         run: npm run merge-coverage-reports
       - name: Upload coverage report to Github artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: coverage-c-${{ github.run_id }}
+          name: coverage-c
           path: coverage-c

@@ -19,5 +19,5 @@ jobs:
       - name: Upload coverage report to Github artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: coverage-a-${{ github.run_id }}
+          name: coverage-a
           path: coverage-a
