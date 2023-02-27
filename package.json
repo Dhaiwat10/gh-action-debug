@@ -1,0 +1,30 @@
+{
+  "name": "gh-action-debug",
+  "version": "1.0.0",
+  "description": "gm",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:a": "jest --group=sum --coverage --coverageDirectory=coverage-a",
+    "test:b": "jest --group=sub --coverage --coverageDirectory=coverage-b",
+    "merge-coverage-reports": "npx istanbul-merge --out coverage-merged.json ./coverage-a/coverage-final.json ./coverage-b/coverage-final.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhaiwat10/gh-action-debug.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhaiwat10/gh-action-debug/issues"
+  },
+  "homepage": "https://github.com/Dhaiwat10/gh-action-debug#readme",
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "jest-runner-groups": "^2.2.0"
+  },
+  "jest": {
+    "runner": "groups"
+  }
+}
