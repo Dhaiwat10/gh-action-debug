@@ -7,9 +7,11 @@ on:
 
 jobs:
   job-c:
+    name: Test Step
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Log out current branch name
-        run: echo "Current branch name is ${{ github.head_ref }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
+      - run: env
