@@ -1,0 +1,14 @@
+name: 'Workflow A'
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  job-a:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3

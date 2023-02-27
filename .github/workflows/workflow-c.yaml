@@ -1,0 +1,14 @@
+name: 'Workflow C'
+
+on:
+  workflow_run:
+    workflows: [Workflow A, Workflow B]
+    types:
+      - completed
+
+jobs:
+  job-c:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
